@@ -5,37 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DuckyLounge</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <script defer src="script.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
 </head>
 <body>
 <div class="container">
 
 <header>
-
     <div class="left">
-    <div class="ducky-lounge">
-    <img src="Duck.png" alt="DuckyLounge Logo" class="logo">
-    <h1 class="ducky-lounge">
-    <span class="ducky">Ducky</span><span class="lounge">Lounge</span>
-    </h1>
-    </div>
+        <div class="ducky-lounge">
+            <img src="assets/Duck.png" alt="DuckyLounge Logo" class="logo">
+            <h1 class="ducky-lounge">
+                <span class="ducky">Ducky</span><span class="lounge">Lounge</span>
+            </h1>
+        </div>
     </div>
 
     <div class="center">
-    <button class="fundraising">Fundraising round started</button>
-     <div class="grey-box"></div>
+        <button class="fundraising">Fundraising round started</button>
+        <div class="grey-box"></div>
     </div>
 
     <div class="right">
-    <button class="contact">Contact Us</button>
-    <div class="grey-box"></div>
-    </div>
+            <button class="contact" onclick="toggleContactModal()">Contact Us</button>
+            <div class="grey-box"></div>
+        </div>
+</header>
 
-    </header>
-
-
+<div class="slide-container">
+    <div class="card" id="1">
         <div class="main-content">
-        <div class="ascii-box">
+            <div class="ascii-box">
                 <div class="yellow-box"></div>
                 <pre class="ascii-art">
 
@@ -94,22 +98,214 @@
 
 
                                                                                   </pre>
-                                                                                            <div class="buttons">
-                                                                                            <button>Create</button>
-                                                                                            <button>Connect</button>
-                                                                                            <button>Monetize</button>
-                                                                                            <button class="highlight">Withdraw</button>
-                                                                                  </div>
+
+                <div class="buttons">
+                    <button>Create</button>
+                    <button>Connect</button>
+                    <button>Monetize</button>
+                    <button class="highlight">Withdraw</button>
+                </div>
             </div>
-
-
-        </div>
-
-        <div class="dot-navigation">
-            <div class="dot active"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
         </div>
     </div>
+
+    <div class="card" id="2">
+        <div class="main-content" >
+            <div class="ascii-box" >
+                <div class="yellow-box"></div>
+                    <div class="data_cards">
+                        <ul class="columns">
+                          <li>
+
+
+                              <div class="big-box">
+                                  <div class="image-container">
+                                        <img src="assets/Group 17.png" alt="icon" class="ico1">
+                                  </div>
+                                  <div class="grey-box">
+                                    <p style="color: #E7E7E7; z-index:3; font-weight:700;  font-family: 'Space Grotesk', sans-serif;">Create</p>
+                                  </div>
+                                </div>
+
+
+                              <div class="small-box">
+                              </div>
+
+                          </li>
+
+                          <li class="arrow"><img src="assets/Arrow 26.png" alt="arrow" class="arrowimg"></li>
+                           <li>
+                               <div class="small-box">
+                              </div>
+
+                              <div class="big-box">
+                                  <div class="image-container">
+                                        <img src="assets/Group 18.png" alt="icon" class="ico2">
+                                  </div>
+                                  <div class="grey-box">
+                                    <p style="color: #E7E7E7; z-index:3; font-weight:700;  font-family: 'Space Grotesk', sans-serif;">Login</p>
+                                  </div>
+                                </div>
+
+
+
+
+                          </li>
+                          <li class="arrow"><img src="assets/Arrow 26.png" alt="arrow" class="arrowimg"></li>
+                          <li>
+
+
+                              <div class="big-box">
+                                  <div class="image-container">
+                                        <img src="assets/Group 19.png" alt="icon" class="ico3">
+                                  </div>
+                                  <div class="grey-box">
+                                    <p style="color: #E7E7E7; z-index:3; font-weight:700;  font-family: 'Space Grotesk', sans-serif;">Monetize</p>
+                                  </div>
+                                </div>
+
+                              <div class="small-box">
+                              </div>
+
+                          </li>
+                          <li class="arrow"><img src="assets/Arrow 26.png" alt="arrow" class="arrowimg"></li>
+                          <li>
+                              <div class="small-box">
+                              </div>
+
+
+                                    <div class="big-box">
+                                  <div class="image-container">
+                                        <img src="assets/Group 21.png" alt="icon" class="ico3">
+                                  </div>
+                                  <div class="grey-box">
+                                    <p style="color: #F1DD6E; z-index:3; font-weight:700;  font-family: 'Space Grotesk', sans-serif;">Withdraw</p>
+                                  </div>
+                                </div>
+
+
+
+                          </li>
+                        </ul>
+
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" id="3"  >
+        <div class="main-content">
+
+
+                <div class="data_cards">
+                        <ul class="columns" style="gap:10vh">
+                          <li>
+
+                            <div class="frame-box">
+                            <p style="color: #E7E7E7; z-index:3; font-weight:700;  font-family: 'Space Grotesk', sans-serif;">You are in charge of your funds</p>
+                            <ul id="31">
+                            <li><h3 style="color: #E7E7E7; z-index:3;font-size: 2.5vh; font-weight:500;  font-family: 'Space Grotesk', sans-serif;" >Complete Control: Deposit, withdraw, and manage your crypto whenever you want.</h3></li>
+                            <li><h3 style="color: #E7E7E7; z-index:3;font-size: 2.5vh; font-weight:500;  font-family: 'Space Grotesk', sans-serif;" >Complete Control: Deposit, withdraw, and manage your crypto whenever you want.</h3></li>
+                            <li><h3 style="color: #E7E7E7; z-index:3;font-size: 2.5vh; font-weight:500;  font-family: 'Space Grotesk', sans-serif;" >Complete Control: Deposit, withdraw, and manage your crypto whenever you want.</h3></li>
+                            </ul>
+
+                            <div class="yellow-box-sub"></div>
+                            </div>
+
+
+                          </li>
+
+
+                           <li>
+                              <div class="frame-box">
+                              <p style="color: #E7E7E7; z-index:3; font-weight:700;  font-family: 'Space Grotesk', sans-serif;" >NSFW / SFW separation</p>
+                               <ul id="32">
+                            <li><h3 style="color: #E7E7E7; z-index:3;font-size: 2.5vh; font-weight:500;  font-family: 'Space Grotesk', sans-serif;" >Tailored Experience: Clearly defined safe‐for‐work (SFW) and not‐safe‐for‐work (NSFW) sections.</h3></li>
+                            <li><h3 style="color: #E7E7E7; z-index:3;font-size: 2.5vh; font-weight:500;  font-family: 'Space Grotesk', sans-serif;" >User Choice: Access the content you want and avoid the content you don’t.</h3></li>
+                            <li><h3 style="color: #E7E7E7; z-index:3;font-size: 2.5vh; font-weight:500;  font-family: 'Space Grotesk', sans-serif;" >Community Safety: Keeps the platform welcoming for everyone.</h3></li>
+                            </ul>
+                                <div class="yellow-box-sub"></div>
+                            </div>
+
+
+
+
+                          </li>
+
+                          <li>
+
+                            <div class="frame-box">
+                            <p style="color: #E7E7E7; z-index:3; font-weight:700;  font-family: 'Space Grotesk', sans-serif;">Full Crypto</p>
+                             <ul id="33">
+                            <li><h3 style="color: #E7E7E7; z-index:3;font-size: 2.5vh; font-weight:500;  font-family: 'Space Grotesk', sans-serif;" >Crypto‐Only Focus: We accept no fiat currency—transact exclusively in digital assets.</h3></li>
+                            <li><h3 style="color: #E7E7E7; z-index:3;font-size: 2.5vh; font-weight:500;  font-family: 'Space Grotesk', sans-serif;" >Safe & Secure: Robust security measures protect your funds at every step.</h3></li>
+                            <li><h3 style="color: #E7E7E7; z-index:3;font-size: 2.5vh; font-weight:500;  font-family: 'Space Grotesk', sans-serif;" >Fast & Efficient: Quick deposits, withdrawals, and swaps so you can move your assets on your terms.</h3></li>
+                            </ul>
+                            <div class="yellow-box-sub"></div>
+
+                            </div>
+
+                          </li>
+
+                        </ul>
+
+                    </div>
+
+
+
+
+    </div>
+    </div>
+    <div class="card" id="4" >
+        <div class="main-content">
+            <div class="ascii-box">
+                <div class="yellow-box"></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="dot-navigation">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+</div>
+
+</div>
+
+
+  <!-- Modal for Contact Us -->
+    <div class="contact_modal" id="contactModal">
+        <div class="contact_section">
+            <h3 class="contact_h3">For Investors</h3>
+            <p class="contact_info" onclick="copyToClipboard('invest@duckylounge.com')">Email: invest@duckylounge.com</p>
+            <p class="contact_info" onclick="copyToClipboard('@ma0xlet')">Telegram: @ma0xlet</p>
+        </div>
+        <div class="contact_section">
+            <h3 class="contact_h3">General Inquiries</h3>
+            <p class="contact_info" onclick="copyToClipboard('contact@duckylounge.com')">Email: contact@duckylounge.com</p>
+            <p class="contact_info">
+                <a href="https://x.com/DuckyLounge" target="_blank" class="contact_link">X: x.com/DuckyLounge</a>
+            </p>
+        </div>
+    </div>
+<script>
+    // Function to toggle modal visibility
+    function toggleContactModal() {
+      const modal = document.getElementById("contactModal");
+      modal.classList.toggle("show");
+    }
+
+    // Function to copy text to clipboard
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(function() {
+        alert("Copied to clipboard: " + text);
+      }).catch(function(err) {
+        alert("Failed to copy: " + err);
+      });
+    }
+  </script>
 </body>
 </html>

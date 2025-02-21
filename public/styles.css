@@ -15,6 +15,167 @@ body {
     overflow: hidden;
 }
 
+.columns {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content:center;
+    margin-right: 5vh;
+     margin-left:5vh;
+      margin-bottom: 2vh;
+}
+
+.columns li {
+
+
+}
+.arrow{
+    margin: auto;
+
+
+}
+.arrowimg{
+    height: 80%;
+    width: 80%;
+}
+
+.big-box {
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    width: 28vh;
+    height: 38vh;
+    background-color: #1C1B1B;
+    border: 0.5px solid #575757;
+    margin-bottom: 4vh;
+}
+
+.frame-box {
+    position: relative; /* So absolute children are positioned relative to it */
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    width: 50vh;
+    height: 72vh;
+    background-color: #050505;
+    border: 0.5px solid #575757;
+    margin-bottom: 4vh;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Space Grotesk', sans-serif !important;
+    cursor: pointer; /* Added to change cursor on hover */
+}
+
+.frame-box p {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    font-size: 5vh;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1; /* Ensure the text stays below the list */
+}
+
+.frame-box h3 {
+    display: block;
+    font-size: 2vh;
+    color: #E7E7E7;
+    text-align: left;
+    margin-bottom: 1vh;
+}
+
+.frame-box ul {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%; /* Reduced width for better alignment */
+    font-size: 2.5vh; /* Smaller font size for better fit */
+    transform: translate(-50%, -50%);
+    text-align: left; /* Align text to the left for better readability */
+    padding: 0;
+    list-style-position: inside;
+    z-index: 2; /* List should appear above text */
+}
+
+.frame-box ul[id="31"], ul[id="32"], ul[id="33"] {
+    display: none;  /* Hide the <ul> elements by default */
+}
+
+.frame-box ul li {
+    margin-bottom: 1vh; /* Space between each list item */
+}
+
+.frame-box ul li h3 {
+    font-size: 2vh; /* Smaller font size for better readability */
+    color: #E7E7E7;
+    font-weight: 700;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.frame-box .yellow-box-sub {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 4px;
+    background-color: #F1DD6E;
+    display: none; /* Will be toggled in JS */
+}
+
+
+
+
+.image-container {
+    flex: 1; /* Take all available space except what the grey box needs */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ico1 {
+    height: 65%;
+    /* width: auto;  automatically adjust width */
+}
+.ico2 {
+    height: 80%;
+    /* width: auto;  automatically adjust width */
+}
+.ico3 {
+    height: 70%;
+    /* width: auto;  automatically adjust width */
+}
+
+.grey-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Space Grotesk', sans-serif !important;
+    width: 100%;
+    background-color: #373737;
+    height: 4vh;
+    border-top: 0.2px solid #575757;
+}
+
+
+
+.small-box {
+    margin-top: 2vh;
+
+    width: 28vh;
+    height: 30vh;
+    background-color: #1C1B1B; /* Optional: Just for visibility */
+    border: 0.2px solid #575757; /* Optional: Just for visibility */
+    margin-bottom: 4vh;
+}
+
+.slide-container{
+    margin-top: 5vh;
+    margin-right: 6vh;
+}
 
 .container {
     width: 100vw;
@@ -30,8 +191,10 @@ header .right {
 
 
 header {
-     font-family: 'Fira Code', monospace;
-    margin-top:-2%;
+    position: fixed;
+    top: 0;
+    font-family: 'Fira Code', monospace;
+    margin-top:0% !important;
 
     width: 100%;
     display: flex;
@@ -113,7 +276,16 @@ button:hover {
     position: relative;
     background-color:#050505;
 }
-
+.yellow-box-sub{
+    z-index:-1;
+    position: relative; /* Position the yellow box absolutely within the relative container */
+    top: 2%; /* Move 5% down from the top */
+    left: 4%; /* Move 5% to the right */
+    width: 100%; /* Adjust width to fit within the container */
+    height: 100%; /* Adjust height to fit within the container */
+    border: 2px solid #F1DD6E; /* Yellow border */
+    background-color: transparent; /* No fill (transparent background) */
+}
 .yellow-box {
     z-index:-1;
     position: absolute; /* Position the yellow box absolutely within the relative container */
@@ -176,4 +348,70 @@ pre.ascii-art {
 
 .dot.active {
     background-color: #F1DD6E;
+    border: 0.2px solid #F1DD6E;
+    border-radius: 10%;
 }
+
+
+
+
+
+
+
+
+/* Contact Modal */
+.contact_modal {
+    position: fixed;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 400px;
+    background: black;
+    border: 1px solid #575757;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    transition: bottom 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    z-index: 1000;
+    opacity: 0;
+}
+
+.contact_modal.show {
+    bottom: 50px;
+    opacity: 1;
+}
+
+.contact_section {
+    padding: 10px 0;
+    border-bottom: 1px solid #575757;
+}
+
+.contact_section:last-child {
+    border-bottom: none;
+}
+
+.contact_section p {
+    cursor: pointer;
+    user-select: all;
+}
+
+.contact_h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+}
+
+.contact_info {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+}
+
+.contact_link {
+    color: #F1DD6E; /* You can style the link color if needed */
+    text-decoration: none;
+}
+
+.contact_link:hover {
+    text-decoration: underline;
+}
+
