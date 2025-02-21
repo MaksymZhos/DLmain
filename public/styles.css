@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code', monospace;
+}
+
+body {
+    background-color: #050505;
+    color: #F1DD6E;
+    overflow: hidden;
+}
+
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+header .right {
+    position: relative; /* Add this to make absolute positioning work */
+}
+
+
+header {
+     font-family: 'Fira Code', monospace;
+    margin-top:-2%;
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Space out the child elements */
+    align-items: center;
+    padding: 0 2%; /* Optional: adds some spacing to the left and right */
+}
+
+.left, .center, .right {
+    display: flex;
+    align-items: center;
+}
+
+.center {
+    justify-content: center; /* Center the "Fundraising" button */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Centering it horizontally */
+}
+.ducky-lounge {
+    font-family: 'Archivo Black', sans-serif; /* Use Archivo Black font */
+    font-size: 3vh; /* Adjust size as needed */
+    text-align: center;
+    display:flex;
+    align-items:center;
+}
+
+.ducky {
+    color: yellow; /* Make "Ducky" yellow */
+}
+
+.lounge {
+    color: white; /* Make "Lounge" white */
+}
+.logo {
+
+    width: 11vh;
+    height: 11vh;
+}
+.fundraising{font-size:1.5vh}
+.contact{font-size:1.5vh}
+.header-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.2vh;
+    font-weight: 900 !important;
+    background-color:#050505;
+    border: 1px solid #575757;
+    color: #E7E7E7;
+    padding: 15px 30px;
+    cursor: pointer;
+
+}
+
+button:hover {
+    color: #F1DD6E; /* Change text color on hover */
+    font-weight: bold; /* Make text bold on hover */
+}
+.main-content {
+    margin-left:2% !important;
+    margin-top:1%;
+    margin-bottom:2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.ascii-box {
+    margin: auto;
+    border: 1px solid #575757;
+    height: 200%;
+    width: 100%;
+    margin-right: 28vh !important;
+    position: relative;
+    background-color:#050505;
+}
+
+.yellow-box {
+    z-index:-1;
+    position: absolute; /* Position the yellow box absolutely within the relative container */
+    top: 2%; /* Move 5% down from the top */
+    left: 1%; /* Move 5% to the right */
+    width: 100%; /* Adjust width to fit within the container */
+    height: 100%; /* Adjust height to fit within the container */
+    border: 2px solid #F1DD6E; /* Yellow border */
+    background-color: transparent; /* No fill (transparent background) */
+}
+/* Update the grey-box selector to be more specific */
+header .right .grey-box,
+header .center .grey-box {
+    z-index: -1;
+    position: absolute;
+    top: 12%;
+    left: 2%;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #575757;
+    background-color: transparent;
+}
+pre.ascii-art {
+    font-size: 1vh;
+    line-height: 1.1;
+    white-space: pre;
+    padding: 0;
+}
+
+
+.buttons {
+
+    width:100%;
+    display: flex;
+    text-align: center;
+    gap:3vh;
+    margin-top: 3%;
+    margin-left:26vh;
+
+    margin-bottom: 5%;
+}
+
+.dot-navigation {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #575757;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #F1DD6E;
+}
