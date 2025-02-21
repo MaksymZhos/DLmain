@@ -55,38 +55,38 @@ document.querySelectorAll('.frame-box').forEach(function(frameBox) {
     frameBox.addEventListener('click', function() {
         const pElements = frameBox.querySelectorAll('p');
         const ulElement = frameBox.querySelector('ul');
-
-        // Check the current state of visibility and toggle accordingly
-        if (ulElement.style.display === 'none' || ulElement.style.display === '') {
-            // If the <ul> is not visible, hide <p> and show <ul>
-            pElements.forEach(function(p) {
-                p.style.display = 'none'; // Hide the <p> text
-            });
-            if (ulElement) {
-                ulElement.style.display = 'block'; // Show the <ul> list
-            }
-        } else {
-            // If the <ul> is visible, hide <ul> and show <p>
-            pElements.forEach(function(p) {
-                p.style.display = 'block'; // Show the <p> text again
-            });
-            if (ulElement) {
-                ulElement.style.display = 'none'; // Hide the <ul> list
-            }
-        }
-
-        // Toggle visibility of the yellow-box
         const yellowBox = frameBox.querySelector('.yellow-box-sub');
-        yellowBox.style.display = yellowBox.style.display === 'none' ? 'block' : 'none';
 
-        // Change the border color
-        const currentBorderColor = frameBox.style.borderColor;
-        if (currentBorderColor === 'rgb(241, 221, 110)') {
-            frameBox.style.borderColor = ''; // Reset to original color
+        // Check the current state of the <ul> (visible if its display is 'block')
+        const isUlVisible = ulElement.style.display === 'block';
+
+        if (!isUlVisible) {
+            // First click: hide <p> and show <ul>
+            pElements.forEach(p => p.style.display = 'none');
+            if (ulElement) ulElement.style.display = 'block';
+            if (yellowBox) yellowBox.style.visibility = 'hidden';
+            frameBox.style.borderColor = '#F1DD6E';
         } else {
-            frameBox.style.borderColor = '#F1DD6E'; // Set to the new color
+            // Second click: reset - hide <ul> and show <p>
+            pElements.forEach(p => p.style.display = 'block');
+            if (ulElement) ulElement.style.display = 'none';
+            if (yellowBox) yellowBox.style.visibility = 'visible';
+            frameBox.style.borderColor = '';
         }
     });
 });
 
+// Reset the state on scroll
+window.addEventListener('wheel', function() {
+    document.querySelectorAll('.frame-box').forEach(function(frameBox) {
+        const pElements = frameBox.querySelectorAll('p');
+        const ulElement = frameBox.querySelector('ul');
+        const yellowBox = frameBox.querySelector('.yellow-box-sub');
 
+        // Reset display properties to initial state
+        pElements.forEach(p => p.style.display = 'block');
+        if (ulElement) ulElement.style.display = 'none';
+        if (yellowBox) yellowBox.style.visibility = 'visible';
+        frameBox.style.borderColor = '';
+    });
+});

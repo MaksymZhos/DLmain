@@ -43,7 +43,7 @@ body {
     margin-top: 2vh;
     display: flex;
     flex-direction: column;
-    width: 28vh;
+    width: 30vh;
     height: 38vh;
     background-color: #1C1B1B;
     border: 0.5px solid #575757;
@@ -89,6 +89,7 @@ body {
 .frame-box ul {
     display: none; /* Hidden by default */
     position: absolute;
+    list-style: none;
     top: 50%;
     left: 50%;
     width: 70%; /* Reduced width for better alignment */
@@ -115,16 +116,6 @@ body {
     font-family: 'Space Grotesk', sans-serif;
 }
 
-.frame-box .yellow-box-sub {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 4px;
-    background-color: #F1DD6E;
-    display: none; /* Will be toggled in JS */
-}
 
 
 
@@ -165,7 +156,7 @@ body {
 .small-box {
     margin-top: 2vh;
 
-    width: 28vh;
+    width: 30vh;
     height: 30vh;
     background-color: #1C1B1B; /* Optional: Just for visibility */
     border: 0.2px solid #575757; /* Optional: Just for visibility */
@@ -377,6 +368,36 @@ pre.ascii-art {
     opacity: 0;
 }
 
+.end-box {
+    position: relative; /* So absolute children are positioned relative to it */
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    width: 76vh;
+    height: 72vh;
+    background-color: #050505;
+    border: 0.5px solid #575757;
+    margin-bottom: 4vh;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Space Grotesk', sans-serif !important;
+
+}
+
+
+
+.end-box p {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    font-size: 5vh;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1; /* Ensure the text stays below the list */
+}
+
 .contact_modal.show {
     bottom: 50px;
     opacity: 1;
@@ -407,11 +428,52 @@ pre.ascii-art {
 }
 
 .contact_link {
-    color: #F1DD6E; /* You can style the link color if needed */
+    color: #FFFFFF; /* You can style the link color if needed */
     text-decoration: none;
 }
 
 .contact_link:hover {
     text-decoration: underline;
+}
+
+.provby{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.provbyt{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: start;
+
+}
+.provbyt img{ margin-top:1vh
+
+
+}
+.ico4{ height: 8vh;}
+.ico5{ height: 4vh}
+.ico6{ height: 1vh;
+    margin-left:1vh;
+    margin-right:1vh;
+}
+
+.copy-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    z-index: 10000;
+}
+.copy-notification.show {
+    opacity: 1;
 }
 
