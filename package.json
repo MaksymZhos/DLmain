@@ -1,0 +1,13 @@
+{
+  "name": "express-visitor-tracker",
+  "version": "1.0.0",
+  "description": "A simple Express app to track visitors and store data in a JSON file.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "uuid": "^9.0.1"
+  }
+}
