@@ -476,4 +476,202 @@ pre.ascii-art {
 .copy-notification.show {
     opacity: 1;
 }
+/* Base responsive styles */
+@media screen and (max-width: 1024px) {
+    .columns {
+        flex-direction: column;
+        margin: 2vh;
+        align-items: center;
+    }
 
+    .arrow {
+        display: none;
+    }
+
+    .big-box {
+        width: 100%;
+        max-width: 40vh;
+        height: auto;
+        min-height: 30vh;
+    }
+
+    .small-box {
+        width: 100%;
+        max-width: 40vh;
+        height: auto;
+        min-height: 25vh;
+    }
+
+    .frame-box {
+        width: 90%;
+        max-width: 50vh;
+        height: auto;
+        min-height: 50vh;
+        margin: 2vh auto;
+    }
+
+    .frame-box p {
+        font-size: 3.5vh;
+        width: 80%;
+    }
+
+    .ascii-box {
+        margin-right: 0 !important;
+        overflow-x: hidden;
+    }
+
+    pre.ascii-art {
+        font-size: 0.8vh;
+        transform: scale(0.8);
+        margin: -10% -20%;
+    }
+
+    .buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 3vh auto;
+        gap: 2vh;
+    }
+
+    .end-box {
+        width: 90%;
+        max-width: 60vh;
+        height: auto;
+        min-height: 50vh;
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1vh;
+        gap: 2vh;
+    }
+
+    .center {
+        position: relative;
+        left: 0;
+        transform: none;
+    }
+
+    .ducky-lounge {
+        font-size: 2.5vh;
+    }
+
+    .logo {
+        width: 8vh;
+        height: 8vh;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1.8vh;
+    }
+
+    .dot-navigation {
+        right: 10px;
+    }
+
+    .frame-box p {
+        font-size: 3vh;
+    }
+
+    .provby {
+        flex-direction: column;
+        gap: 2vh;
+    }
+
+    .contact_modal {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+/* Small mobile styles */
+@media screen and (max-width: 480px) {
+    .ducky-lounge {
+        font-size: 2vh;
+    }
+
+    .logo {
+        width: 6vh;
+        height: 6vh;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 1.5vh;
+    }
+
+    .frame-box p {
+        font-size: 2.5vh;
+    }
+
+    pre.ascii-art {
+        font-size: 0.6vh;
+        transform: scale(0.6);
+        margin: -20% -40%;
+    }
+
+    .ico4 {
+        height: 6vh;
+    }
+
+    .ico5 {
+        height: 3vh;
+    }
+}
+
+/* Handle height-based responsive design */
+@media screen and (max-height: 700px) {
+    .container {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    header {
+        position: relative;
+    }
+
+    .slide-container {
+        margin-top: 2vh;
+    }
+}
+
+/* Fix for very small screens */
+@media screen and (max-width: 320px) {
+    .frame-box {
+        min-height: 40vh;
+    }
+
+    .frame-box p {
+        font-size: 2vh;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 1.3vh;
+    }
+}
+
+/* Landscape orientation fixes */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .container {
+        height: auto;
+    }
+
+    header {
+        flex-direction: row;
+        padding: 1vh 2vh;
+    }
+
+    .columns {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .frame-box {
+        min-height: 40vh;
+    }
+}

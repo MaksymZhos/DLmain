@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         showCard(currentIndex);
     }
 
-    setInterval(autoScroll, 5000);
+    setInterval(autoScroll, 10000);
 
     window.addEventListener("wheel", function (event) {
         if (isScrolling) return; // Prevent rapid scrolling
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         setTimeout(() => {
             isScrolling = false;
-        }, 450); // Delay to prevent rapid switching
+        }, 500); // Delay to prevent rapid switching
     });
 
     showCard(currentIndex);
