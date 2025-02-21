@@ -19,4 +19,4 @@ jobs:
     steps:
       - name: Send Deployment Request
         run: |
-          curl -X POST -H "Authorization: Bearer 1r36c7tfvwnor2gby476fq8eciaoyhnvw24io" http://192.18.154.121:5000/deploy
+          curl -X POST -H "Authorization: Bearer 1r36c7tfvwnor2gby476fq8eciaoyhnvw24io" https:duckylounge.com:5000/deploy
