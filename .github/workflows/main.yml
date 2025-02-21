@@ -1,0 +1,22 @@
+name: Trigger Deployment
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types:
+      - closed
+    branches:
+      - master
+  workflow_dispatch:  # Allows manual trigger of the workflow
+
+jobs:
+  trigger-deploy:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Deployment Request
+        run: |
+          curl -X POST -H "Authorization: Bearer 1r36c7tfvwnor2gby476fq8eciaoyhnvw24io" http://192.18.154.121:5000/deploy
