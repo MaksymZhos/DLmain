@@ -25,12 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    function autoScroll() {
-        currentIndex = (currentIndex + 1) % cards.length;
-        showCard(currentIndex);
-    }
 
-    setInterval(autoScroll, 10000);
 
     window.addEventListener("wheel", function (event) {
         if (isScrolling) return; // Prevent rapid scrolling
@@ -52,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     showCard(currentIndex);
 });
 document.querySelectorAll('.frame-box').forEach(function(frameBox) {
-    frameBox.addEventListener('click', function() {
+    frameBox.addEventListener('mouseover', function() {
         const pElements = frameBox.querySelectorAll('p');
         const ulElement = frameBox.querySelector('ul');
         const yellowBox = frameBox.querySelector('.yellow-box-sub');
@@ -61,18 +56,24 @@ document.querySelectorAll('.frame-box').forEach(function(frameBox) {
         const isUlVisible = ulElement.style.display === 'block';
 
         if (!isUlVisible) {
-            // First click: hide <p> and show <ul>
+            // First hover: hide <p> and show <ul>
             pElements.forEach(p => p.style.display = 'none');
             if (ulElement) ulElement.style.display = 'block';
             if (yellowBox) yellowBox.style.visibility = 'hidden';
             frameBox.style.borderColor = '#F1DD6E';
-        } else {
-            // Second click: reset - hide <ul> and show <p>
-            pElements.forEach(p => p.style.display = 'block');
-            if (ulElement) ulElement.style.display = 'none';
-            if (yellowBox) yellowBox.style.visibility = 'visible';
-            frameBox.style.borderColor = '';
         }
+    });
+
+    frameBox.addEventListener('mouseout', function() {
+        const pElements = frameBox.querySelectorAll('p');
+        const ulElement = frameBox.querySelector('ul');
+        const yellowBox = frameBox.querySelector('.yellow-box-sub');
+
+        // Second hover: reset - hide <ul> and show <p>
+        pElements.forEach(p => p.style.display = 'block');
+        if (ulElement) ulElement.style.display = 'none';
+        if (yellowBox) yellowBox.style.visibility = 'visible';
+        frameBox.style.borderColor = '';
     });
 });
 
